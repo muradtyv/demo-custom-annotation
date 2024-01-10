@@ -17,6 +17,7 @@ public class LogAspect {
 
         Object[] allArgs = proceedingJoinPoint.getArgs();
 
+
        String target =  proceedingJoinPoint.getTarget().toString();
 
         log.info("===============");
@@ -24,6 +25,7 @@ public class LogAspect {
         log.info("LOG: all args {}", allArgs);
         log.info("LOG: target {}", target);
         log.info("LOG: executed {}", proceedingJoinPoint.getSignature());
+        System.out.println(proceedingJoinPoint.getSignature().getName());
 
         return proceedingJoinPoint.proceed();
 
